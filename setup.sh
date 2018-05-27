@@ -33,7 +33,7 @@ apt-get update
 apt-get install -y docker-ce
 
 echo Install vim with python support
-apt-get purge -y vim vim-* xxd && apt autoremove
+apt-get purge -y vim vim-common vim-tiny xxd && apt autoremove
 git clone https://github.com/vim/vim.git
 cd vim
 ./configure --prefix=/usr --enable-python3interp
@@ -59,24 +59,47 @@ pip install powerline-status
 
 echo Install i3-gaps
 cd ~
-apt-get install -y \
-  libxcb-keysyms1-dev \
-  libpango1.0-dev \
-  libxcb-util0-dev \
-  xcb \
-  libxcb1-dev \
-  libxcb-icccm4-dev \
-  libyajl-dev \
-  libev-dev \
-  libxcb-xkb-dev \
-  libxcb-cursor-dev \
-  libxkbcommon-dev \
-  libxcb-xinerama0-dev \
-  libxkbcommon-x11-dev \
-  libstartup-notification0-dev \
-  libxcb-randr0-dev \
-  libxcb-xrm0 \
-  libxcb-xrm-dev
+if [ -n "`cat /etc/issue | grep -i ubuntu`" ]; then
+  apt-get install -y \
+    libxcb-keysyms1-dev \
+    libpango1.0-dev \
+    libxcb-util0-dev \
+    xcb \
+    libxcb1-dev \
+    libxcb-icccm4-dev \
+    libyajl-dev \
+    libev-dev \
+    libxcb-xkb-dev \
+    libxcb-cursor-dev \
+    libxkbcommon-dev \
+    libxcb-xinerama0-dev \
+    libxkbcommon-x11-dev \
+    libstartup-notification0-dev \
+    libxcb-randr0-dev
+  add-apt-repository ppa:aguignard/ppa
+  apt-get update
+  apt-get install -y libxcb-xrm-dev
+fi
+if [ -n "`cat /etc/issue | grep -i debian`" ]; then
+  apt-get install -y \
+    libxcb-keysyms1-dev \
+    libpango1.0-dev \
+    libxcb-util0-dev \
+    xcb \
+    libxcb1-dev \
+    libxcb-icccm4-dev \
+    libyajl-dev \
+    libev-dev \
+    libxcb-xkb-dev \
+    libxcb-cursor-dev \
+    libxkbcommon-dev \
+    libxcb-xinerama0-dev \
+    libxkbcommon-x11-dev \
+    libstartup-notification0-dev \
+    libxcb-randr0-dev \
+    libxcb-xrm0 \
+    libxcb-xrm-dev
+fi
 git clone https://github.com/Airblader/i3.git i3-gaps
 cd i3-gaps
 git checkout 4.15.0.1
