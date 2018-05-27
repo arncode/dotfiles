@@ -33,7 +33,7 @@ apt-get update
 apt-get install -y docker-ce
 
 echo Install vim with python support
-apt-get purge -y vim xxd && apt autoremove
+apt-get purge -y vim vim-* xxd && apt autoremove
 git clone https://github.com/vim/vim.git
 cd vim
 ./configure --prefix=/usr --enable-python3interp
@@ -45,10 +45,10 @@ cd vim
 #make VIMRUNTIMEDIR=/usr/share/vim/vim74
 make
 checkinstall -y --install --pkgname vim
-mkdir .vim
-cd .vim
-git clone https://github.com/ctrlpvim/ctrlp.vim.git bundle/ctrlp.vim
-git clone https://github.com/scrooloose/nerdtree.git bundle/nerdtree
+#mkdir .vim
+#cd .vim
+#git clone https://github.com/ctrlpvim/ctrlp.vim.git bundle/ctrlp.vim
+#git clone https://github.com/scrooloose/nerdtree.git bundle/nerdtree
 
 echo Install pip, powerline
 cd ~
