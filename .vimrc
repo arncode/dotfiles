@@ -5,10 +5,11 @@ set tabstop=2
 set autoindent
 set nu
 
-set rtp+=/usr/lib/python2.7/site-packages/powerline/bindings/vim
+set rtp+=/usr/local/lib/python3.5/dist-packages/powerline/bindings/vim
 set laststatus=2
 set t_Co=256
 
-set rtp+=~/.vim/ctrlp.vim
-set rtp+=~/.vim/nerdtree
-
+set rtp+=~/.vim/bundle/ctrlp.vim
+set rtp+=~/.vim/bundle/nerdtree
+let g:buftabline_show=1
+set rtp+=~/.vim/bundle/vim-buftabline
