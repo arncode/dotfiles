@@ -1,3 +1,5 @@
+filetype plugin on
+syntax on
 set term=xterm-256color
 set expandtab
 set shiftwidth=2
