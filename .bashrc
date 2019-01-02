@@ -20,6 +20,11 @@ mcd () {
   mkdir -p $1 && cd $1
 }
 
+#inject additional environment specific settings if present
+if [ -f ".bashrc.local" ]; then
+  source .bashrc.local
+fi
+
 if [ -z "$TMUX" ]; then
   exec tmux
 fi
