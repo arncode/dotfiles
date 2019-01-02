@@ -20,3 +20,7 @@ mcd () {
   mkdir -p $1 && cd $1
 }
 
+if [ -z "$TMUX" ]; then
+  exec tmux
+fi
+
