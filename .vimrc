@@ -6,6 +6,7 @@ set shiftwidth=2
 set tabstop=2
 set autoindent
 set nu
+set backspace=indent,eol,start
 set background=dark
 
 set rtp+=/usr/lib/python3.6/site-packages/powerline/bindings/vim
