@@ -28,7 +28,7 @@ if [ -f ".bashrc.local" ]; then
   source .bashrc.local
 fi
 
-if [ -z "$TMUX" ]; then
+if [ -z "$TMUX" ] && [ -z "$SSH_CONNECTION" ]; then
   exec tmux
 fi
 
