@@ -6,6 +6,7 @@ set shiftwidth=2
 set tabstop=2
 set autoindent
 set nu
+set background=dark
 
 set rtp+=/usr/lib/python3.6/site-packages/powerline/bindings/vim
 set laststatus=2
