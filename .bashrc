@@ -28,6 +28,10 @@ if [ -f ".bashrc.local" ]; then
   source .bashrc.local
 fi
 
+if [ ! -z "$SSH_CONNECTION" ]; then
+  export PS1="\[\033[1;37m\]\u@\h\[\033[0m\] $PS1"
+fi
+
 if [ -z "$TMUX" ] && [ -z "$SSH_CONNECTION" ]; then
   exec tmux
 fi
